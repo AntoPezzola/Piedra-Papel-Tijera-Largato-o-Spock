@@ -59,43 +59,6 @@ de agregarle mejoras siempre y cuando se respete el espíritu del juego.
 * Que el código cumpla con los estándares mínimos que planteamos
   a lo largo de la materia
 
-### Extras
-
-> No hace falta que sean todos, cada _extra_ aporta.
-
-* Interfaz Responsive
-* Posibilidad de jugar más de una partida
-* Mantener un contador de victorias de cada participante en la misma sesión
-* Posibilidad de jugar entre 2 humanos (de forma local)
-  - Manteniendo el anonimato de las elecciones de cada jugador
-
-## Condiciones de Aprobación del TFI
-
-Para aprobar el TFI (con 4) es necesario que:
-
-* La aplicación levante
-* Se pueda jugar por lo menos una partida
-* El juego cumpla con los Requerimientos Funcionales Mínimos
-* Exista la información necesaria para poder instalar y correr el project
-
-## Condiciones de Aprobación de la Materia
-
-* **Promocionan** si
-  - Todos los `TPs >= 7` y `TFI >= 4`
-  - En tal caso se promedian las notas
-  - Pudiendo influir la nota de concepto
-* **Pendiente de Aprobación** (PA) si
-  - Todos los `TPs >= 7` y `TFI < 4`
-  - O algún `TP` entre `[4, 7)` y `TFI >= 4`
-* **Desaprobado** sino
-
-## Entrega del Trabajo Final Integrador
-
-* **Fecha Límite**: Miércoles 12/07/2023
-* **Formato de Entrega**:
-  - Generar un release en el proyecto en github
-  - Enviar un mail a `tpi-doc-uis@listas.unq.edu.ar` con el link del tag
-  - De no cumplirse con las pautas se considerá **Ausente**
 
 [sheldon]: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Pierre_ciseaux_feuille_l%C3%A9zard_spock_aligned.svg/240px-Pierre_ciseaux_feuille_l%C3%A9zard_spock_aligned.svg.png
 [wiki]: https://bigbangtheory.fandom.com/wiki/Rock,_Paper,_Scissors,_Lizard,_Spock
