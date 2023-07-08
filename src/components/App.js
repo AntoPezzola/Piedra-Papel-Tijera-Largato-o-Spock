@@ -6,11 +6,11 @@ function App() {
   const [juegoComenzado, setComenzar] = useState(false);
 
   const handleStartGame = () => {
-    setComenzar(true);
+    setComenzar(!juegoComenzado);
   };
 
   const handlePlayAgain = () => {
-    setComenzar(false);
+    setComenzar(!juegoComenzado);
   };
 
   return (
