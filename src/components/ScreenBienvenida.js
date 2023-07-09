@@ -1,13 +1,13 @@
 import React from "react";
 import './ScreenBienvenida.css'
 
-const ScreenBienvenida = ({ onClickStart }) => {
+const ScreenBienvenida = ({ empezarJuego }) => {
   return (
     <div className="inicio-de-Juego">
       <body>
-        <h1 className="Bienvenido"> ¡Bienvenido al juego! </h1>
-        <button className="button-Comenzar" onClick={onClickStart}>
-          Comenzar juego
+        <h1 className="bienvenido"> ¡Bienvenido al juego! </h1>
+        <button className="button-Comenzar" onClick={empezarJuego}>
+          Comenzar
         </button>
       </body>
     </div>

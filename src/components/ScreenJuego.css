@@ -1,67 +1,106 @@
 .Juego-Comenzado {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    background-color: bisque;
-  }
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: bisque;
+}
 
-  .volverBoton {
-    display: flexbox; 
-    width: 150px;
-    height: 150px;
+.volverBoton {
+  display: flex;
+  width: 150px;
+  height: 150px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  margin: 10px;
+  padding: 10px;
+  font-size: 16px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.elegir-Opcion {
+  margin-left: 540px;
+}
+
+.resultado {
+  display: inline;
+  position: absolute;
+  top: 370px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 3;
+}
+
+.boton-volver-a-jugar {
+   background-color: #4caf50;
+    color: #fff;
+    width: 200px;
     border: none;
-    background-color: transparent;
+    font-size: 15px;
+    border-radius: 8px;
     cursor: pointer;
-    margin: 10px;
-    padding: 10px;
-    font-size: 16px;
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
+    margin-top: 30px;
+}
+
+.boton-volver-a-jugar:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.boton-volver-a-jugar:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.opciones {
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+  margin-top: 20px;
+}
+
+.opcion {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 150px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  margin: 10px;
+  padding: 10px;
+  font-size: 16px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.opcion-contenido {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.opcion-nombre {
+  color: black;
+  padding: 5px;
+  font-size: 14px;
+  margin-top: 5px;
+}
 
 
-  .elegir-Opcion{ 
-    margin-left: 540px;
-  }
+.opcion img {
+  max-width: 100%;
+  max-height: 100%;
+}
 
+.opcion:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
 
-  .resultado {
-    display: inline-block;
-    margin-top: -150px; 
-    margin-left: 490px;
-  }
-
-  .Opciones {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-  }
-  
-  .opcion {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 150px;
-    height: 150px;
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
-    margin: 10px;
-    padding: 10px;
-    font-size: 16px;
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-  
-  .opcion img {
-    max-width: 100%;
-    max-height: 100%;
-  }
-  
-  .opcion:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  }
-  
-  .opcion:active {
-    transform: translateY(0);
-    box-shadow: none;
-  }
+.opcion:active {
+  transform: translateY(0);
+  box-shadow: none;
+}

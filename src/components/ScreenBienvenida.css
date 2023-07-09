@@ -1,24 +1,23 @@
 .inicio-de-Juego {
     display: flex;
     width: 100%;
-    flex-direction: column;
-    align-items: center;
     height: 100vh;
     background-color: bisque;
   }
   
-  .Bienvenido {
+  .bienvenido {
+    margin-left: 460px;
     font-size: 36px;
-    text-align: center;
     margin-top: 190px;
   }
   
   .button-Comenzar {
     background-color: #4caf50;
     color: #fff;
-    width: 300px;
+    width: 250px;
     border: none;
     padding: 15px 30px;
+    margin-left: 515px;
     font-size: 20px;
     border-radius: 8px;
     cursor: pointer;

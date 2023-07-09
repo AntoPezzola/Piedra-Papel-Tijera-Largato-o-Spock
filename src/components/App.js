@@ -6,19 +6,19 @@ function App() {
   const [juegoComenzado, setComenzar] = useState(false);
 
   const handleStartGame = () => {
-    setComenzar(!juegoComenzado);
+    setComenzar(true);
   };
 
   const handlePlayAgain = () => {
-    setComenzar(!juegoComenzado);
+    setComenzar(false);
   };
 
   return (
     <div className="App">
       {juegoComenzado ? (
-        <ScreenJuego onPlayAgain={handlePlayAgain} />
+        <ScreenJuego volverInicio={handlePlayAgain} />
       ) : (
-        <ScreenBienvenida onClickStart={handleStartGame} />
+        <ScreenBienvenida empezarJuego={handleStartGame} />
       )}
     </div>
   );

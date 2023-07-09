@@ -20,7 +20,7 @@ const opciones = [
 ];
 
 
-const ScreenJuego = ({ onPlayAgain }) => {
+const ScreenJuego = ({ volverInicio }) => {
   const [eleccionUser, setEleccionUser] = useState(null);
   const [eleccionPc, setEleccionPc] = useState(null);
   const [resultado, setResultado] = useState(null);
@@ -28,7 +28,7 @@ const ScreenJuego = ({ onPlayAgain }) => {
   const [userMessage, setUserMessage] = useState(null);
   const [contadorUser, setContadorUser] = useState(0);
   const [contadorPc, setContadorPc] = useState(0);
-  const [bloquearBotones, setBloquearBotones] = useState(false);
+  const [showAnimation, setShowAnimation] = useState(false);
 
 
   const obtenerResultado = (eleccionUser, eleccionPc) => {
@@ -49,12 +49,13 @@ const ScreenJuego = ({ onPlayAgain }) => {
     setEleccionPc(null);
     setUserMessage(null);
     setPcMessage(null);
+    setShowAnimation(true); 
     setResultado(null);
   };
 
   const handleClickOption = (eleccion) => {
     setEleccionUser(eleccion);
-    setBloquearBotones(true);
+    setShowAnimation(false)
 
     const numeroRandom = Math.floor(Math.random() * 5);
 
@@ -64,7 +65,6 @@ const ScreenJuego = ({ onPlayAgain }) => {
 
     setTimeout(() => {
       setResultado(obtenerResultado(eleccion, numeroRandom));
-      setBloquearBotones(false);
     }, 3000);
 
     clearTimeout();
@@ -72,13 +72,13 @@ const ScreenJuego = ({ onPlayAgain }) => {
 
   useEffect(() => {
     if (eleccionUser !== null) {
-      setUserMessage(`Has elegido ${opciones[eleccionUser]?.nombre}`);
+      setUserMessage(`Elegiste ${opciones[eleccionUser]?.nombre}`);
     }
   }, [eleccionUser]);
 
   useEffect(() => {
     if (eleccionPc !== null) {
-      setPcMessage(`El oponente ha elegido ${opciones[eleccionPc]?.nombre}`);
+      setPcMessage(`El oponente eligio ${opciones[eleccionPc]?.nombre}`);
     }
   }, [eleccionPc]);
 
@@ -90,60 +90,71 @@ const ScreenJuego = ({ onPlayAgain }) => {
     }
   }, [contadorUser, contadorPc]);
 
+  useEffect(() => {
+    setShowAnimation(true);
+  }, []);
+
+
   const buttonsAnimation = useTrail(opciones.length, {
-    opacity: resultado === null ? 1 : 0,
-    transform: resultado === null ? "translateY(0)" : "translateY(-20px)",
+    opacity: showAnimation ? 1 : 0,
+    transform: showAnimation ? "translateY(0)" : "translateY(-20px)",
     config: { tension: 200, friction: 20 },
   });
 
 
   return (
     <div className="Juego-Comenzado">
-      <button className="volverBoton" onClick={onPlayAgain}>
+      <button className="volverBoton" onClick={volverInicio}>
         <img src={iconoVolver} alt="Volver" />
       </button>
       <h1 className="elegir-Opcion">Elige una opción!</h1>
       <div className="resultado-juego">
-        <div className="Opciones">
-          {buttonsAnimation.map((animation, index) => (
-            <animated.button
-              className="opcion"
-              key={opciones[index].id}
-              onClick={() => handleClickOption(opciones[index].id)}
-              disabled={bloquearBotones || resultado !== null}
-              title={opciones[index].nombre}
-              style={animation}
-            >
-              {opciones[index].imagen ? (
-                <img src={opciones[index].imagen} alt={opciones[index].nombre} />
-              ) : (
-                opciones[index].nombre
-              )}
-            </animated.button>
-          ))}
+        <div className="opciones">
+            {buttonsAnimation.map((animation, index) => (
+              <animated.button
+                className="opcion"
+                key={opciones[index].id}
+                onClick={() => handleClickOption(opciones[index].id)}
+                disabled={resultado !== null}
+                title={opciones[index].nombre}
+                style={animation}
+              >
+                {opciones[index].imagen ? (
+                 <div className="opcion-contenido">
+                 {opciones[index].imagen && (
+                   <img src={opciones[index].imagen} alt={opciones[index].nombre} />
+                 )}
+                 <span className="opcion-nombre">{opciones[index].nombre}</span>
+               </div>
+                ) : (
+                  opciones[index].nombre
+                )}
+              </animated.button>
+            ))}
         </div>
         <div className="resultado">
           {eleccionUser !== null && <p>{userMessage}</p>}
           {eleccionPc !== null && <p>{pcMessage}</p>}
-          {resultado === 0 && <p>🤷🏽‍♀️ Empate</p>}
+          {resultado === 0 && <p>Hay un empate!</p>}
           {resultado === 1 && (
             <p>
-              ✅ Has ganado con {opciones[eleccionUser]?.nombre} contra{" "}
+              ✅ Ganaste con {opciones[eleccionUser]?.nombre} contra{" "}
               {opciones[eleccionPc]?.nombre}
             </p>
           )}
           {resultado === 2 && (
             <p>
-              ❌ Has perdido con {opciones[eleccionUser]?.nombre} contra{" "}
+              ❌ Perdiste con {opciones[eleccionUser]?.nombre} contra{" "}
               {opciones[eleccionPc]?.nombre}
             </p>
           )}
           {resultado !== null && (
-            <button className="volerAJugarBoton" onClick={reset}>
+            <button className="boton-volver-a-jugar" onClick={reset}>
               <p> Volver a jugar! </p>
             </button>
           )}
         </div>
+
       </div>
     </div>
   );
