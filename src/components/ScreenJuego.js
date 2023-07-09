@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import './ScreenJuego.css';
-import { useTrail, animated } from "react-spring";
-
+import { useTrail } from "react-spring";
+import Opciones from "./Opciones";
 
 const piedra = "https://img.icons8.com/fluency/70/rock.png";
 const papel = "https://img.icons8.com/external-tulpahn-flat-tulpahn/70/external-paper-stationery-tulpahn-flat-tulpahn.png";
@@ -26,8 +26,6 @@ const ScreenJuego = ({ volverInicio }) => {
   const [resultado, setResultado] = useState(null);
   const [pcMessage, setPcMessage] = useState(null);
   const [userMessage, setUserMessage] = useState(null);
-  const [contadorUser, setContadorUser] = useState(0);
-  const [contadorPc, setContadorPc] = useState(0);
   const [showAnimation, setShowAnimation] = useState(false);
 
 
@@ -35,11 +33,9 @@ const ScreenJuego = ({ volverInicio }) => {
     if (eleccionUser === eleccionPc) {
       return 0;
     }
-
     if (opciones[eleccionUser]?.vence.includes(eleccionPc)) {
       return 1;
     }
-
     return 2;
   };
 
@@ -49,7 +45,7 @@ const ScreenJuego = ({ volverInicio }) => {
     setEleccionPc(null);
     setUserMessage(null);
     setPcMessage(null);
-    setShowAnimation(true); 
+    setShowAnimation(true);
     setResultado(null);
   };
 
@@ -83,14 +79,6 @@ const ScreenJuego = ({ volverInicio }) => {
   }, [eleccionPc]);
 
   useEffect(() => {
-    if (contadorUser === 3 || contadorPc === 3) {
-      reset();
-      setContadorUser(0);
-      setContadorPc(0);
-    }
-  }, [contadorUser, contadorPc]);
-
-  useEffect(() => {
     setShowAnimation(true);
   }, []);
 
@@ -101,7 +89,6 @@ const ScreenJuego = ({ volverInicio }) => {
     config: { tension: 200, friction: 20 },
   });
 
-
   return (
     <div className="Juego-Comenzado">
       <button className="volverBoton" onClick={volverInicio}>
@@ -110,27 +97,11 @@ const ScreenJuego = ({ volverInicio }) => {
       <h1 className="elegir-Opcion">Elige una opción!</h1>
       <div className="resultado-juego">
         <div className="opciones">
-            {buttonsAnimation.map((animation, index) => (
-              <animated.button
-                className="opcion"
-                key={opciones[index].id}
-                onClick={() => handleClickOption(opciones[index].id)}
-                disabled={resultado !== null}
-                title={opciones[index].nombre}
-                style={animation}
-              >
-                {opciones[index].imagen ? (
-                 <div className="opcion-contenido">
-                 {opciones[index].imagen && (
-                   <img src={opciones[index].imagen} alt={opciones[index].nombre} />
-                 )}
-                 <span className="opcion-nombre">{opciones[index].nombre}</span>
-               </div>
-                ) : (
-                  opciones[index].nombre
-                )}
-              </animated.button>
-            ))}
+            <Opciones
+            opciones={opciones}
+            handleClickOption={handleClickOption}
+            buttonsAnimation={buttonsAnimation}
+          />
         </div>
         <div className="resultado">
           {eleccionUser !== null && <p>{userMessage}</p>}
@@ -154,7 +125,6 @@ const ScreenJuego = ({ volverInicio }) => {
             </button>
           )}
         </div>
-
       </div>
     </div>
   );
