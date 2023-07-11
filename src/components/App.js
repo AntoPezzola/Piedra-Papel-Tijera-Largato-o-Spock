@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import ScreenBienvenida from "./ScreenBienvenida";
 import ScreenJuego from "./ScreenJuego";
 
@@ -15,11 +17,12 @@ function App() {
 
   return (
     <div className="App">
-      {juegoComenzado ? (
-        <ScreenJuego volverInicio={handlePlayAgain} />
-      ) : (
-        <ScreenBienvenida empezarJuego={handleStartGame} />
-      )}
+      <ToastContainer/>
+        {juegoComenzado ? (
+          <ScreenJuego volverInicio={handlePlayAgain} />
+        ) : (
+          <ScreenBienvenida empezarJuego={handleStartGame} />
+        )}
     </div>
   );
 }

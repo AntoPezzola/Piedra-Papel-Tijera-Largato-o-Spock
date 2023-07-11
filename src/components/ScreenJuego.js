@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import './ScreenJuego.css';
 import { useTrail } from "react-spring";
 import Opciones from "./Opciones";
+import { toast } from "react-toastify";
 
 const piedra = "https://img.icons8.com/fluency/70/rock.png";
 const papel = "https://img.icons8.com/external-tulpahn-flat-tulpahn/70/external-paper-stationery-tulpahn-flat-tulpahn.png";
@@ -27,6 +28,9 @@ const ScreenJuego = ({ volverInicio }) => {
   const [pcMessage, setPcMessage] = useState(null);
   const [userMessage, setUserMessage] = useState(null);
   const [showAnimation, setShowAnimation] = useState(false);
+  const [contadorUser, setContadorUser] = useState(0);
+  const [contadorOponente, setContadorOponente] =  useState(0);  
+
 
 
   const obtenerResultado = (eleccionUser, eleccionPc) => {
@@ -34,8 +38,10 @@ const ScreenJuego = ({ volverInicio }) => {
       return 0;
     }
     if (opciones[eleccionUser]?.vence.includes(eleccionPc)) {
+      setContadorUser(contadorUser + 1); 
       return 1;
     }
+    setContadorOponente(contadorOponente + 1); 
     return 2;
   };
 
@@ -47,7 +53,24 @@ const ScreenJuego = ({ volverInicio }) => {
     setPcMessage(null);
     setShowAnimation(true);
     setResultado(null);
+    resetContador(); 
   };
+
+  const resetContador = () => {
+    if (contadorOponente === 3 || contadorUser === 3) {
+      if (contadorOponente === 3) {
+        toast.error('Perdiste la Partida!', {
+        position: "bottom-center"
+      }) 
+      } else {
+        toast.success("Ganaste la partida!", {
+          position: "bottom-center"
+        })
+      }
+      setContadorOponente(0);
+      setContadorUser(0);
+    }
+  }
 
   const handleClickOption = (eleccion) => {
     setEleccionUser(eleccion);
@@ -78,6 +101,8 @@ const ScreenJuego = ({ volverInicio }) => {
     }
   }, [eleccionPc]);
 
+
+  
   useEffect(() => {
     setShowAnimation(true);
   }, []);
@@ -96,6 +121,10 @@ const ScreenJuego = ({ volverInicio }) => {
       </button>
       <h1 className="elegir-Opcion">Elige una opción!</h1>
       <div className="resultado-juego">
+        <div className="contador">
+           <p className="contador-User"> Tus puntos: {contadorUser} </p>
+           <p className="contador-Oponente"> Puntos Oponente: {contadorOponente} </p>
+        </div>
         <div className="opciones">
             <Opciones
             opciones={opciones}
@@ -109,13 +138,13 @@ const ScreenJuego = ({ volverInicio }) => {
           {resultado === 0 && <p>Hay un empate!</p>}
           {resultado === 1 && (
             <p>
-              ✅ Ganaste con {opciones[eleccionUser]?.nombre} contra{" "}
+              ✅ {opciones[eleccionUser]?.nombre} le gana a {" "}
               {opciones[eleccionPc]?.nombre}
             </p>
           )}
           {resultado === 2 && (
             <p>
-              ❌ Perdiste con {opciones[eleccionUser]?.nombre} contra{" "}
+              ❌ {opciones[eleccionUser]?.nombre} pierde contra {" "}
               {opciones[eleccionPc]?.nombre}
             </p>
           )}

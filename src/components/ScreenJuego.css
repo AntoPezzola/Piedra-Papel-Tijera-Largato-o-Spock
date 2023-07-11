@@ -1,7 +1,7 @@
 .Juego-Comenzado {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  min-height: 100vh; 
   background-color: #D4E6F1; 
 }
 
@@ -18,30 +18,57 @@
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
+.contador {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contador-User,
+.contador-Oponente {
+  font-size: 24px;
+}
+
+.contador-User {
+  margin-left: 50px;
+  margin-right: auto;
+  order: 1;
+}
+
+.contador-Oponente {
+  margin-left: auto; 
+  margin-right: 50px ;
+  order: 2;
+}
+
+
 .elegir-Opcion {
-  margin-left: 540px;
+  margin-left: auto; 
+  margin-right: auto; 
+  margin-top: 20px; 
 }
 
 .resultado {
   display: inline;
   position: absolute;
-  top: 370px;
+  top: 50%; 
   left: 50%;
   transform: translate(-50%, -50%);
+  margin-top: 20px;
   padding: 10px;
   border-radius: 5px;
   z-index: 3;
 }
 
 .boton-volver-a-jugar {
-   background-color:#3498DB;
-    color: #fff;
-    width: 200px;
-    border: none;
-    font-size: 15px;
-    border-radius: 8px;
-    cursor: pointer;
-    margin-top: 30px;
+  background-color:#3498DB;
+  color: #fff;
+  width: 200px;
+  border: none;
+  font-size: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 5px;
 }
 
 .boton-volver-a-jugar:hover {
@@ -59,4 +86,25 @@
   justify-content: center;
   z-index: 1;
   margin-top: 20px;
+}
+
+@media (max-width: 600px) {
+  .volverBoton {
+    width: 100px; 
+    height: 100px; 
+  }
+
+  .elegir-Opcion {
+    margin-left: 20px; 
+    margin-right: 20px; 
+  }
+
+  .resultado {
+    font-size: 14px; 
+  }
+
+  .boton-volver-a-jugar {
+    width: 150px; 
+    font-size: 13px; 
+  }
 }
