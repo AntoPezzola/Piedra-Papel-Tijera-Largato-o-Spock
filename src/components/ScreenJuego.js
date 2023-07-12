@@ -5,6 +5,7 @@ import Animacion from "./Animacion";
 import opcionesJuego from "./OpcionesLista";
 import useJuego from "./UsosDelJuego";
 
+
 const iconoVolver = "https://img.icons8.com/ios/70/return.png";
 
 const ScreenJuego = ({ volverInicio }) => {

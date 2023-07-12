@@ -1,5 +1,19 @@
 # UIs » Trabajo Final Integrador (TFI) » 1°C 2022
 
+## Instalación
+
+1. Asegúrate de tener Node.js instalado en tu sistema.
+2. Abre una terminal en la carpeta raíz del proyecto.
+3. Ejecuta el comando `npm install` para instalar las dependencias.
+
+Ahora podrás ver y probar tu proyecto de React en el navegador. Cualquier cambio que realices en los archivos de origen se reflejará automáticamente en la página sin necesidad de reiniciar el servidor.
+
+## Ejecución
+
+1. Una vez instaladas las dependencias, ejecuta el comando `npm start`.
+2. Abre tu navegador y accede a `http://localhost:3000` para ver la aplicación.
+
+
 Este `TFI` tiene carácter de **exámen integrador** y debe realizarse
 de **manera individual**.
 
