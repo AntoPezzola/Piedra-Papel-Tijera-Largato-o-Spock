@@ -31,11 +31,11 @@ const useJuego = (opcionesJuego) => {
   const resetContador = () => {
     if (contadorOponente === 3 || contadorUsuario === 3) {
       if (contadorOponente === 3) {
-        toast.error("¡Perdiste la Partida!", {
+        toast.error("El Oponente logro 3 puntos ¡Perdiste la Partida!", {
           position: "bottom-center",
         });
       } else {
-        toast.success("¡Ganaste la partida!", {
+        toast.success("Lograste 3 puntos ¡Ganaste la partida!", {
           position: "bottom-center",
         });
       }

@@ -49,14 +49,18 @@
 }
 
 @media (max-width: 768px) {
+  .opciones {
+    flex-wrap: wrap;
+  }
+
   .opcion {
     width: 120px;
     height: 120px;
     font-size: 14px;
-    padding: 5px;
   }
-  
-  .opcion-nombre {
-    font-size: 12px;
+
+  .opcion img {
+    max-width: 80%;
+    max-height: 80%;
   }
 }

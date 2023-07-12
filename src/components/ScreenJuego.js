@@ -1,4 +1,4 @@
-import React, { useEffect , useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./ScreenJuego.css";
 import Opciones from "./Opciones";
 import Animacion from "./Animacion";
@@ -34,8 +34,7 @@ const ScreenJuego = ({ volverInicio }) => {
     }
   }, [eleccionOponente]);
 
-
-  const buttonsAnimation = Animacion(opcionesJuego, eleccionUsuario === null);
+  const buttonsAnimation = Animacion(opcionesJuego, eleccionUsuario === null );
 
   return (
     <div className="Juego-Comenzado">
@@ -52,7 +51,7 @@ const ScreenJuego = ({ volverInicio }) => {
           <div className="opciones">
             <Opciones opciones={opcionesJuego} handleClickOption={handleClickOption} buttonsAnimation={buttonsAnimation} />
           </div>
-        ) :  (
+        ) : (
           <div className="resultado">
             {eleccionUsuario !== null && <p>{userMessage}</p>}
             {eleccionOponente !== null && <p>{pcMessage}</p>}
