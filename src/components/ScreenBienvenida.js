@@ -1,5 +1,5 @@
 import React from "react";
-import './ScreenBienvenida.css'
+import '../styles/ScreenBienvenida.css'
 
 const ScreenBienvenida = ({ empezarJuego }) => {
   return (
@@ -7,7 +7,7 @@ const ScreenBienvenida = ({ empezarJuego }) => {
       <body>
         <h1 className="bienvenido"> ¡Piedra, papel, tijera, lagarto o Spock! </h1>
         <button className="button-Comenzar" onClick={empezarJuego}>
-          Comenzar
+          Empezar partida
         </button>
       </body>
     </div>

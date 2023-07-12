@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import "./ScreenJuego.css";
+import "../styles/ScreenJuego.css";
 import Opciones from "./Opciones";
-import Animacion from "./Animacion";
-import opcionesJuego from "./OpcionesLista";
+import Animacion from "../utils/Animacion";
+import opcionesJuego from "../utils/OpcionesLista";
 import useJuego from "./UsosDelJuego";
 
 
@@ -38,7 +38,7 @@ const ScreenJuego = ({ volverInicio }) => {
   const buttonsAnimation = Animacion(opcionesJuego, eleccionUsuario === null );
 
   return (
-    <div className="Juego-Comenzado">
+    <div className="juego-Comenzado">
       <button className="volverBoton" onClick={volverInicio}>
         <img src={iconoVolver} alt="Volver" />
       </button>
@@ -69,7 +69,7 @@ const ScreenJuego = ({ volverInicio }) => {
             )}
             {resultado !== null && (
               <button className="boton-volver-a-jugar" onClick={reset}>
-                Volver a jugar
+                Volver a elegir 
               </button>
             )}
           </div>

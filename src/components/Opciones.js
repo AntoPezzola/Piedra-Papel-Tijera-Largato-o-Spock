@@ -1,6 +1,6 @@
 import React from "react";
 import {animated } from "react-spring";
-import './Opciones.css'; 
+import '../styles/Opciones.css'
 
 const Opciones = ({ opciones, handleClickOption, buttonsAnimation }) => {
   return (

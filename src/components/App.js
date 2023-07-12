@@ -19,7 +19,9 @@ function App() {
     <div className="App">
       <ToastContainer/>
         {juegoComenzado ? (
+            <div className="transition-container">
           <ScreenJuego volverInicio={handlePlayAgain} />
+          </div>
         ) : (
           <ScreenBienvenida empezarJuego={handleStartGame} />
         )}
