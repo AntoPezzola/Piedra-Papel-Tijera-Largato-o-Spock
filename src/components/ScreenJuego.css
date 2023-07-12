@@ -18,18 +18,20 @@
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
+
+
 .contador {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.contador-User,
+.contador-Usuario,
 .contador-Oponente {
   font-size: 24px;
 }
 
-.contador-User {
+.contador-Usuario{
   margin-left: 50px;
   margin-right: auto;
   order: 1;
@@ -49,26 +51,48 @@
 }
 
 .resultado {
-  display: inline;
+  display: inline-block;
   position: absolute;
-  top: 50%; 
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  margin-top: 20px;
-  padding: 10px;
-  border-radius: 5px;
+  padding: 20px;
+  background-color: #f1f1f1;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
   z-index: 3;
 }
 
+.resultado p {
+  font-size: 24px;
+  animation: fade-in 0.5s ease-in-out forwards;
+}
+
+
+.resultado-empate {
+  color: #ff5e00;
+}
+
+.resultado-ganador {
+  color: green;
+}
+
+.resultado-perdedor {
+  color: red;
+}
+
 .boton-volver-a-jugar {
-  background-color:#3498DB;
+  background-color: #3498DB;
   color: #fff;
   width: 200px;
   border: none;
-  font-size: 15px;
+  font-size: 18px;
   border-radius: 8px;
   cursor: pointer;
-  margin-top: 5px;
+  margin-top: 10px;
+  padding: 10px 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .boton-volver-a-jugar:hover {
@@ -79,6 +103,19 @@
 .boton-volver-a-jugar:active {
   transform: translateY(0);
   box-shadow: none;
+}
+
+
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .opciones {
