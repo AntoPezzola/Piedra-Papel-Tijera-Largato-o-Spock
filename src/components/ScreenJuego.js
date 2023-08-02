@@ -38,7 +38,7 @@ const ScreenJuego = ({ volverInicio }) => {
   const buttonsAnimation = Animacion(opcionesJuego, eleccionUsuario === null );
 
   return (
-    <body className="juego-Comenzado">
+    <div className="juego-Comenzado">
       <button className="volverBoton" onClick={volverInicio}>
         <img src={iconoVolver} alt="Volver" />
       </button>
@@ -75,7 +75,7 @@ const ScreenJuego = ({ volverInicio }) => {
           </div>
         )}
       </div>
-    </body>
+    </div>
   );
 };
 
