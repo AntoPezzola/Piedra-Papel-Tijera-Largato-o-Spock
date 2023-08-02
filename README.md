@@ -1,5 +1,9 @@
 # UIs » Trabajo Final Integrador (TFI) » 1°C 2022
 
+## Juego 
+
+Aqui esta el link del juego [Piedra-Papel-Tijera-Largato-o-Spock](https://antopezzola.github.io/Piedra-Papel-Tijera-Largato-o-Spock/) 
+
 ## Instalación
 
 1. Asegúrate de tener Node.js instalado en tu sistema.
@@ -25,7 +29,7 @@ inventado por Sam Kass y Karen Bryla.
 
 ![sheldon]
 
-### Reglas del Juego
+## Reglas del Juego
 
 Pueden ver las reglas en la [página de los creadores][creators] o
 bien en la [wiki de The Big Bang Theory][wiki], pero es simplemente
@@ -57,7 +61,7 @@ como el _Piedra, Papel o Tijera_ con más casos:
 * La Interfaz del Juego tiene que ser lo suficientemente
   intuitiva para no necesitar explicación
 
-### Requerimientos Funcionales Mínimos
+## Requerimientos Funcionales Mínimos
 
 Detallamos la funcionalidad **mínima** que se espera
 que tenga el juego, pero ustedes tienen la libertad
@@ -72,8 +76,3 @@ de agregarle mejoras siempre y cuando se respete el espíritu del juego.
   - Tampoco vale "mirar" la elección del jugador para elegir la jugada
 * Que el código cumpla con los estándares mínimos que planteamos
   a lo largo de la materia
-
-
-[sheldon]: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Pierre_ciseaux_feuille_l%C3%A9zard_spock_aligned.svg/240px-Pierre_ciseaux_feuille_l%C3%A9zard_spock_aligned.svg.png
-[wiki]: https://bigbangtheory.fandom.com/wiki/Rock,_Paper,_Scissors,_Lizard,_Spock
-[creators]: (http://www.samkass.com/theories/RPSSL.html)

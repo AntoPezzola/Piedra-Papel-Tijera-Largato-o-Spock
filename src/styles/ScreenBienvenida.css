@@ -39,6 +39,6 @@
   .button-Comenzar {
     width: 200px;
     font-size: 18px;
-    margin-left: 150px;
+    margin: 30px auto 0;
   }
 }
