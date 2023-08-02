@@ -2,7 +2,7 @@
 
 ## Juego 
 
-Aqui esta el link del juego [https://antopezzola.github.io/Piedra-Papel-Tijera-Largato-o-Spock/]
+Aqui esta el link del juego [Piedra-Papel-Tijera-Largato-o-Spock](https://antopezzola.github.io/Piedra-Papel-Tijera-Largato-o-Spock/)
 
 ## Instalación
 
