@@ -29,7 +29,7 @@ inventado por Sam Kass y Karen Bryla.
 
 ![sheldon]
 
-### Reglas del Juego
+## Reglas del Juego
 
 Pueden ver las reglas en la [página de los creadores][creators] o
 bien en la [wiki de The Big Bang Theory][wiki], pero es simplemente
@@ -61,7 +61,7 @@ como el _Piedra, Papel o Tijera_ con más casos:
 * La Interfaz del Juego tiene que ser lo suficientemente
   intuitiva para no necesitar explicación
 
-### Requerimientos Funcionales Mínimos
+## Requerimientos Funcionales Mínimos
 
 Detallamos la funcionalidad **mínima** que se espera
 que tenga el juego, pero ustedes tienen la libertad
