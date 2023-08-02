@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Piedra-Papel-Tijera-Largato-o-Spock/static/css/main.9b4d1959.css",
-    "main.js": "/Piedra-Papel-Tijera-Largato-o-Spock/static/js/main.d1b122a6.js",
+    "main.css": "/Piedra-Papel-Tijera-Largato-o-Spock/static/css/main.2404475c.css",
+    "main.js": "/Piedra-Papel-Tijera-Largato-o-Spock/static/js/main.2f290e63.js",
     "static/js/787.2132b845.chunk.js": "/Piedra-Papel-Tijera-Largato-o-Spock/static/js/787.2132b845.chunk.js",
     "index.html": "/Piedra-Papel-Tijera-Largato-o-Spock/index.html",
-    "main.9b4d1959.css.map": "/Piedra-Papel-Tijera-Largato-o-Spock/static/css/main.9b4d1959.css.map",
-    "main.d1b122a6.js.map": "/Piedra-Papel-Tijera-Largato-o-Spock/static/js/main.d1b122a6.js.map",
+    "main.2404475c.css.map": "/Piedra-Papel-Tijera-Largato-o-Spock/static/css/main.2404475c.css.map",
+    "main.2f290e63.js.map": "/Piedra-Papel-Tijera-Largato-o-Spock/static/js/main.2f290e63.js.map",
     "787.2132b845.chunk.js.map": "/Piedra-Papel-Tijera-Largato-o-Spock/static/js/787.2132b845.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9b4d1959.css",
-    "static/js/main.d1b122a6.js"
+    "static/css/main.2404475c.css",
+    "static/js/main.2f290e63.js"
   ]
 }
