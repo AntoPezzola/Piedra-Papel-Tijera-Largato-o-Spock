@@ -1,5 +1,9 @@
 # UIs » Trabajo Final Integrador (TFI) » 1°C 2022
 
+## Juego 
+
+Aqui esta el link del juego [https://antopezzola.github.io/Piedra-Papel-Tijera-Largato-o-Spock/]
+
 ## Instalación
 
 1. Asegúrate de tener Node.js instalado en tu sistema.
